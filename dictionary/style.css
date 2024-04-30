@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: hsla(172, 72%, 55%, 0.784);
+        }
+        ::selection{
+            color: #fff;
+            background: hsla(172, 72%, 55%, 0.784);
+        }
+        .wrapper{
+            width: 420px;
+            background: white;
+            border-radius: 7px;
+            padding: 25px 28px 45px;
+            box-shadow: 7px 7px 20px rgba(0,0,0,0.5);
+        }
+        .wrapper ul{
+            height: 0;
+  opacity: 0;
+  padding-right: 1px;
+  overflow-y: hidden;
+  transition: all 0.2s ease;
+        }
+        .wrapper.active .info-text{
+           display: none;
+        }
+        .wrapper.active ul{
+            opacity: 1;
+            height: 303px;
+        }
+        .wrapper header{
+            font-size: 28px;
+            font-weight: 500;
+            text-align: center;
+        }
+        .wrapper .search{
+            position: relative;
+            margin: 35px 0 18px;
+        }
+        .info-text span{
+            font-weight: 500;
+        }
+        .search input{
+            height: 53px;
+            width: 100%;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid #999;
+            padding: 0 42px;
+
+        }
+        .search input:focus{
+            padding: 0 41px;
+            border:2px solid hsla(172, 72%, 55%, 0.784);
+        }
+        .search input::placeholder{
+            color: #b8b8b8;
+        }
+        .search :where(i,span){
+            position: absolute;
+            top: 50%;
+            color: #999;
+            transform: translateY(-50%);
+        }
+        .search i{
+            left: 18px;
+            pointer-events: none;
+            font-size: 16px;
+        }
+        .search input:focus ~i{
+            color: hsla(172, 72%, 55%, 0.784);
+
+        }
+        .search span{
+            right: 15px;
+            font-size: 16px;
+            cursor:pointer;
+            display: none;
+        }
+        .search input:valid ~ span{
+            display: block;
+        }
+        .wrapper .info-text{
+            font-size: 13px;
+            margin: -3px 0 -10px;
+        }
+        .info-text span{
+            font-weight: 500;
+        }
+        .wrapper.active .info-text{
+            display: none;
+        }
+        .wrapper ul li{
+            display: flex;
+            margin-bottom: 14px;
+            padding-bottom: 17px;
+            align-items: center;
+            list-style: none;
+            border-bottom: 1px solid #ccc;
+            justify-content: space-between;
+        }
+        ul .word p{
+            font-size: 22px;
+            font-weight: 500;
+        }
+        ul .word span{
+            font-size: 12px;
+            color: #989898;
+        }
+        ul .word i{
+            cursor: pointer;
+            font-size: 15px;
+            color: #999;
+        }
+        ul li:last-child{
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+            border-bottom: 0px;
+        }
+        ul .content{
+            max-height: 215px;
+            overflow-y: auto;
+        }
+        ul .content::-webkit-scrollbar{
+            width: 0px;
+        }
+        .content li .details{
+            border-left: 3px solid hsla(172, 72%, 55%, 0.784);
+            border-radius: 2px;
+            padding-left: 10px;
+        }
+        .content li p{
+            font-size: 17px;
+            font-weight: 500;
+        }
+        .content li span{
+            font-size: 15px;
+            color: #7e7e7e;
+        }
+        .synonyms .synonyms .list{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .content .synonyms span{
+            cursor: pointer;
+            margin-right: 5px;
+            text-decoration: underline;
+        }
